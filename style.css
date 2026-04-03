@@ -96,7 +96,7 @@ cursor:pointer
 }
 
 .btn{
-    background-color: #000;
+    background: linear-gradient(90deg, #111, #444);
     color: #fff;
     font-size: 15px;
     padding: 12px 40px;
@@ -105,6 +105,46 @@ cursor:pointer
     border-radius: 50px;
     border-top-left-radius: 0;
     cursor: pointer;
+    transition: transform .14s ease, box-shadow .14s ease, opacity .14s;
+}
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    opacity: .98;
+}
+.btn:focus{
+    outline: 3px solid rgba(17,17,17,0.12);
+    outline-offset: 2px;
+}
+
+/* Fix product background and improve spacing */
+.product{
+    height: 370px;
+    width: 250px;
+    background-color: rgba(16,17,17,0.06);
+    position: relative;
+    box-shadow: 0 5px 10px rgba(17, 0, 17, 0.3);
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px){
+    .nav{ padding: 0 20px; }
+    .nav img{ height: 60px; margin-right: 20px; }
+    .content{ top: 100px; flex-direction: column; overflow-y: auto; }
+    .content-left, .content-right{ width: 100%; padding: 40px 30px; }
+    .content-left h1{ font-size: 40px; }
+    .content-left p{ width: 100%; }
+    .product{ height: 320px; width: 220px; }
+}
+
+@media (max-width: 480px){
+    .nav{ height: 80px; }
+    .nav-part-1 ul li{ margin-right: 16px; font-size: 16px; }
+    .content-left{ padding: 24px; }
+    .content-left h1{ font-size: 28px; }
+    .btn{ width: 100%; padding: 14px; border-radius: 30px; }
 }
 
 .content-right{
